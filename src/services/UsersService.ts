@@ -6,7 +6,7 @@ interface IUsersCreate {
   email: string;
 }
 
-class UsersServices {
+class UsersService {
 
   private usersRepository: Repository<User>
 
@@ -30,6 +30,12 @@ class UsersServices {
 
   }
 
+  async findByEmail(email: string) {
+    const user = await this.usersRepository.findOne({ email });
+  
+    return user;
+  }
+
 }
 
-export { UsersServices }
+export { UsersService }
