@@ -66,6 +66,10 @@ class ConnectionsService {
     .where("user_id = :user_id", { user_id })
     .execute();
   }
+
+  async deleteConnection(socket_id: string){
+    await this.connectionsRepository.delete({socket_id});
+  }
   
 }
 

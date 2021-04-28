@@ -52,4 +52,17 @@ io.on("connect", async (socket) => {
 
   });
 
+  socket.on("close_session_connection", async (params) => {
+
+    const { user_id } = params;
+
+    const { socket_id } = await connectionsService.findByUserId(user_id);
+
+    await connectionsService.deleteConnection(socket_id);
+
+    io.emit("remove_messages");
+
+
+  });
+
 });

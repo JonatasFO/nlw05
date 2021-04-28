@@ -33,10 +33,19 @@
                   <span></span>
                   <div class="admin_list_messages" id="allMessages{{id}}"></div>
 
-                 <div class="admin_send_message">
-                  <input type="text" id="send_message_{{id}}"/>
-                  <button id="send" class="btn_send" onclick="sendMessage('{{id}}')">Enviar</button>
-                 </div>
+                  <div style="display: flex">
+
+                    <div class="admin_send_message">
+                     <input type="text" id="send_message_{{id}}"/>
+                     <button id="send" class="btn_send" onclick="sendMessage('{{id}}')">Enviar</button>
+                    </div>
+
+                    <div id="user{{id}} class="close_session_connection">
+                     <button id="close" class="btn_close" onclick="closeConnection('{{id}}')">Encerrar antedimento</button>
+                    </div>
+
+                  </div>
+
       </div>
     </script>
   </body>

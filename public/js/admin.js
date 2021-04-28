@@ -114,6 +114,25 @@ socket.on("admin_receive_message", (data) => {
 
 });
 
+function closeConnection(id) {
+
+  const params = {
+    user_id: id
+  }
+
+  socket.emit("close_session_connection", params);
+
+}
+
+socket.on("remove_messages", () => {
+
+  var node = document.getElementById("supports");
+
+  if (node.parentNode) {
+    node.parentNode.removeChild(node);
+  }
+
+});
 
 
 
